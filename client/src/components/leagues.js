@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Leagues = () => {
+export default () => {
     return(
         <div>
             <h1>Leagues</h1>
@@ -8,4 +8,3 @@ const Leagues = () => {
     )
 }
 
-export default Leagues;
