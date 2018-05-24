@@ -12,10 +12,12 @@ const App = () => (
             <Link to="/">
                 <h4 className="text-light">SoCal Badminton League </h4>
             </Link>
+            <button className="btn btn-light">Sign in</button>
+
         </nav>
         <div className="container-fluid">
             <div className="row">
-                <div className="col-3">
+                <div className="col-md-3 col-xl-2 bd-sidebar">
                     <div>
                         <div className="my-5">
                             <Link to="/">Home</Link>
