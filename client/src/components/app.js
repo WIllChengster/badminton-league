@@ -4,6 +4,7 @@ import {Link, Route} from 'react-router-dom';
 import GettingStarted from './getting-started'
 import Home from './home';
 import Leagues from './leagues';
+import LeaguePage from './leaguePage'
 import '../assets/css/app.css'
 
 const App = () => (
@@ -37,6 +38,7 @@ const App = () => (
                     <Route path="/getting-started" component={GettingStarted}></Route>
                     <Route exact path="/" component={Home}/>
                     <Route path ="/leagues" component={Leagues}/>
+                    <Route path = "/listing/:leagueId" component={LeaguePage}/>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@ export default () => {
     const Leagues = Object.keys(leagueData).map((item,index)=>{
         return(
             <li key={index} className="list-group-item">
-            <Link to="/listing/">{leagueData[item].name}</Link>
+            <Link to={`/listing/${item}`}>{leagueData[item].name}</Link>
             <p className="mt-3"> Start Date: {leagueData[item].startDate}</p>
             <p> End Date: {leagueData[item].endDate}</p>
         </li>
