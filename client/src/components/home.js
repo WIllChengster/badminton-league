@@ -8,12 +8,17 @@ export default () => {
             <Link to={`/listing/${item}`}>{leagueData[item].name}</Link>
             <p className="mt-3"> Start Date: {leagueData[item].startDate}</p>
             <p> End Date: {leagueData[item].endDate}</p>
+            
+            <a href='#' className="card-link btn btn-sm btn-primary">Join</a>
+            <a href='#' className="card-link btn btn-sm btn-info">Info</a>
+
         </li>
         )
     })
     return(
         <div>
             <h1 className="display-4">Welcome</h1>
+            <a href='#' className="btn btn-lg btn-secondary">Create a League</a>
             <div className="card">
                 <div className="card-body bg-transparent">
                     <h5 className="card-title">Current Leagues</h5>

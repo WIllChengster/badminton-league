@@ -3,16 +3,24 @@ const PORT = process.env.port || 5000;
 const cors = require('cors');
 const app = express();
 const { resolve } = require('path');
-const mysql = require('mysql')
-
-
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+const leagueRoute = require('./routes/leagueRoutes')
 
 app.use(cors());
 
 app.use(express.static(resolve(__dirname, "client", "dist")))
 
+app.use("/api", leagueRoute);
 
+mongoose.connect(keys.mongoURI, (err, res) => {
+    if(err){
+        console.log("\x1b[31m", "db connection failed! ", err)
+    } else {
+        console.log("\x1b[36m%s", "Successful Connection to mongodb")
+    }
+})
 
 app.listen(PORT, () => {
-    console.log("Server is running on PORT: " +PORT)
+    console.log("\x1b[36m", "Server is running on PORT: " +PORT)
 })
