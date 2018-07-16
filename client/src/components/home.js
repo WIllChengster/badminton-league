@@ -24,7 +24,7 @@ export default () => {
                     <h5 className="card-title">Current Leagues</h5>
                 </div>
                 <ul className="list-group list-group-flush">
-                    {Leagues}
+                    {/* {Leagues} */}
                 </ul>
             </div>
         </div>

@@ -1,14 +1,45 @@
-import React from 'react';
-import leagueData from '../data/leagueData'
-export default (props) => {
-    console.log(props.match.params.leagueId)
-    const leagueId = props.match.params.leagueId
-    return(
-        <div>
-            <h1 className="display-4">{leagueData[leagueId].name}</h1>
-            <p>Location: {leagueData[leagueId].location}</p>
-            <p>Start Date:{leagueData[leagueId].startDate}</p>
-            <p>End Date: {leagueData[leagueId].endDate}</p>
-        </div>
-    )
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class LeaguePage extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            name: "",
+            startDate: "",
+            endDate:"",
+            location:"",
+        }
+    }
+
+    componentWillMount(){
+        const data = {id: this.props.match.params.leagueId};
+
+        axios.post("/api/findLeague", data ).then( (res)=>{
+            
+            const { name, startDate, endDate, location } = res.data
+            this.setState({
+                name,
+                startDate,
+                endDate,
+                location
+            })
+        } );
+    }
+
+    render() {
+        console.log(this.state);
+
+        const { name, startDate, endDate, location } = this.state
+        return(
+            <div>
+                <h1 className="display-3">{name}</h1>
+                <p>{startDate}</p>
+                <p>{endDate}</p>
+                <p>{location}</p>
+            </div>
+        )
+    }
 }
+
+export default LeaguePage;

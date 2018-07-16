@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "t",
   "main": "index.js",
+  "proxy":{
+    "/api/*": {
+      "target": "http://localhost:5000" 
+    }
+  },
   "scripts": {
     "start": "node dev_server.js",
     "bundle": "webpack --config webpack.prod.js --progress",
@@ -16,6 +21,7 @@
     "url": "https://github.com/burninggun/badminton-league.git"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.1",
     "react": "^16.2.0",
