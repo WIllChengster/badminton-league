@@ -26,16 +26,14 @@ class Leagues extends Component{
     }
 
     render(){
-
         const Leagues = this.state.leagueList.map( (item, index) =>{
             return(
                 <div key={index} className="list-group-item my-3">
                     <Link to={`/listing/${item._id}`}>{item.name}</Link>
-                    <p className="mt-3"> Start Date: {item.startDate}</p>
-                    <p> End Date: {item.endDate}</p>
-                    
-                    <Link to='#' className="card-link btn btn-sm btn-primary">Join</Link>
-                    <a href='#' className="card-link btn btn-sm btn-info">Info</a>
+                    <p>Location: {item.location}</p>
+                    <p> Start Date: {new Date(item.startDate).toDateString()}</p>
+                    <p> End Date: {new Date(item.endDate).toDateString()}</p>
+                    <div className="card-link btn btn-sm btn-primary">ongoing</div>
                  </div>
             )
         });

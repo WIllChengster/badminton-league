@@ -14,7 +14,9 @@ var leagueSchema = new Schema({
     startDate: {type: Date},
     endDate: {type: Date},
     location: {type: String},
-    Organizer: [userSchema]
+    Organizer: [userSchema],
+    description: {type: String},
+    
 })
 
 module.exports = mongoose.model("leagues", leagueSchema);

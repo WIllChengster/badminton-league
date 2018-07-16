@@ -34,8 +34,8 @@ class LeaguePage extends Component {
         return(
             <div>
                 <h1 className="display-3">{name}</h1>
-                <p>{startDate}</p>
-                <p>{endDate}</p>
+                <p>{new Date(startDate).toDateString()}</p>
+                <p>{new Date(endDate).toDateString()}</p>
                 <p>{location}</p>
             </div>
         )
